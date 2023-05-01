@@ -5,9 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="/dist/output.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Roboto&display=swap" rel="stylesheet">
+  <script>
+    function myFunc(event) {
+        let x = event.clientX;
+  let y = event.clientY;
+    }
+  </script>
 </head>
 <body class="bg-[#010010] font-montserrat max-w-[1440px] place-self-center">
     <div class="place-self-center px-[auto]">
+        <div class="absolute bg-[#73FDAA] rounded-full"
+        onmousemove="myFunc(event)" style="left: ${x}; top: ${y}; width: 200px; height: 200px;"></div>
 <nav class="flex justify-between items-center pt-[66px] pxsticky top-0 bg-black z-50">
 
     <div class="font-bold text-[32px] text-white flex">
