@@ -534,6 +534,66 @@ video {
   left: 0px;
 }
 
+.top-\[\] {
+  top: ;
+}
+
+.top-\[x\] {
+  top: x;
+}
+
+.left-\[\] {
+  left: ;
+}
+
+.left-\[y\] {
+  left: y;
+}
+
+.left-\[4y\] {
+  left: 4y;
+}
+
+.left-\[\$y\] {
+  left: $y;
+}
+
+.top-\[\$x\] {
+  top: $x;
+}
+
+.left-\[var\(x\)px\] {
+  left: var(x)px;
+}
+
+.left-\[var\(y\)px\] {
+  left: var(y)px;
+}
+
+.top-\[var\(x\)px\] {
+  top: var(x)px;
+}
+
+.top-\[var\(event\.clientX\)px\] {
+  top: var(event.clientX)px;
+}
+
+.top-\[\(event\.clientX\)px\] {
+  top: (event.clientX)px;
+}
+
+.left-\[var\(\)px\] {
+  left: var()px;
+}
+
+.left-\[\(event\.clientX\)px\] {
+  left: (event.clientX)px;
+}
+
+.left-\[\(event\.clientY\)px\] {
+  left: (event.clientY)px;
+}
+
 .z-50 {
   z-index: 50;
 }
@@ -554,6 +614,14 @@ video {
   height: 38px;
 }
 
+.h-\[\] {
+  height: ;
+}
+
+.h-\[200px\] {
+  height: 200px;
+}
+
 .w-\[523px\] {
   width: 523px;
 }
@@ -564,6 +632,14 @@ video {
 
 .w-\[737px\] {
   width: 737px;
+}
+
+.w-\[\] {
+  width: ;
+}
+
+.w-\[200px\] {
+  width: 200px;
 }
 
 .max-w-\[1440px\] {
