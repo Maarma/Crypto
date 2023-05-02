@@ -4,19 +4,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="/dist/output.css" rel="stylesheet">
+  <link href="/src/cursor.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Roboto&display=swap" rel="stylesheet">
+  
   <script>
-    function myFunc(event) {
-        let x = event.clientX;
-        let y = event.clientY;
-        return  x,y;
-    }
+    document.addEventListener('scroll', () => {
+    document.documentElement.dataset.scroll = window.scrollY;
+});
+    let root = document.documentElement;
+
+    root.addEventListener("mousemove", e => {
+    root.style.setProperty('--mouse-x', e.clientX + "px");
+    root.style.setProperty('--mouse-y', e.clientY + window.scrollY + "px");
+});
+
   </script>
+
 </head>
 <body class="bg-[#010010] font-montserrat max-w-[1440px] place-self-center">
     <div class="place-self-center px-[auto]">
-        <div class="absolute bg-[#73FDAA] rounded-full top-[(event.clientX)px] left-[(event.clientY)px] w-[200px] h-[200px]"
-        onmousemove="myFunc(event)"></div>
+        <div id="cursor" class="absolute bg-[#73FDAA] rounded-full pointer-events-none blur-2xl"></div>
 <nav class="flex justify-between items-center pt-[66px] pxsticky top-0 bg-black z-50">
 
     <div class="font-bold text-[32px] text-white flex">

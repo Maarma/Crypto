@@ -1,0 +1,14 @@
+:root {
+    --mouse-x: 0px;
+    --mouse-y: 0px;
+  }
+
+#cursor {
+    position: absolute;
+    left: var(--mouse-x);
+    top: var(--mouse-y);
+    width: 100px;
+    height: 100px;
+    margin-left: -50px;
+    margin-top: -50px;
+}
