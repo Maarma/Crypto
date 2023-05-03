@@ -1,4 +1,4 @@
-:root {
+px:root {
     --mouse-x: 0px;
     --mouse-y: 0px;
   }
@@ -11,4 +11,19 @@
     height: 100px;
     margin-left: -50px;
     margin-top: -50px;
+}
+
+#p1 {
+    left: 750px;
+    top: 1610px;
+}
+
+#p2 {
+    left: 750px;
+    top: 1810px;
+}
+
+#p3 {
+    left: 750px;
+    top: 2010px;
 }
