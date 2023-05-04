@@ -27,14 +27,14 @@ fetch(`https://${BASE_URL}/coins`, {
           <div class="flex mb-2">
             <div class="flex place-items-center justify-around w-2/3">
               <img class="w-12 h-12 object-cover" src="${coin.iconUrl}" alt="${coin.name}">
-              <p>${coin.symbol}</p>
+              <p class="mx-2">${coin.symbol}</p>
               <p class="text-[1.5vh] opacity-70">${coin.name}</p>
             </div>
             <img class="mx-auto mt-4 h-4 v-4" src="" alt="">
           </div>
           <div class="grid gap-2 px-6 pt-6 pb-2">
-            <p class="text-2xl">$${Number(coin.price).toFixed(2)}</p>
-            <p>${coin.change}%</p>
+            <p class="text-2xl">$ ${Number(coin.price).toFixed(2)}</p>
+            <p>${coin.change} %</p>
           </div>
         `;
       marketTrendsWrapper.append(article);

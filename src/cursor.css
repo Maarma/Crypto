@@ -27,3 +27,16 @@ px:root {
     left: 750px;
     top: 2010px;
 }
+body {
+    background-image: url("/src/images/Ellipse.png"), 
+    url("/src/images/Ellipse.png"), 
+    url("/src/images/Ellipse.png"),
+    url("/src/images/Ellipse.png"),
+    url("/src/images/Ellipse.png"),
+    url("/src/images/Ellipse.png");
+    background-repeat: no-repeat, no-repeat, no-repeat,
+    no-repeat, no-repeat;
+    background-position: 141px 191px, 710px 600px,100px 875px,
+    0px 1440px, 825px 5150px, -80px 5300px;
+}
+
