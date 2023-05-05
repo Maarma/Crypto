@@ -27,3 +27,14 @@ export const getCoin = async (uuid) => {
     }  
 };
 
+export const getCoinHistory = async (uuid) => {
+    try {
+        const response = await fetch(`${BASE_URL}/coin/${uuid}/history`, { headers: options,
+        });
+
+        return response.json();
+
+    } catch (error) {
+        console.log(error);
+    }  
+};

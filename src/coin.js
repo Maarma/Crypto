@@ -1,4 +1,4 @@
-import { getCoins, getCoin } from "../api/coinService.js";
+import { getCoins, getCoin, getCoinHistory } from "../api/coinService.js";
 
 const data = await getCoins();
 
@@ -17,11 +17,12 @@ const data = await getCoins();
             "rounded-2xl"
         ];
       
-      const borderColorsWeDontWant = ['#000000', '#00042b', '#303030'];
+      const borderColorsWeDontWant = ['#000000', '#00042b', '#303030']; //not visible border colors list
       
       article.style.borderColor = borderColorsWeDontWant.includes(coin.color) ? '#73FDAA' : coin.color;
+      // if border colors in list, use green
 
-      article.classList.add(...articleClasses);
+      article.classList.add(...articleClasses); //
       article.innerHTML = `
           <div class="flex mb-2">
             <div class="flex place-items-center justify-around w-4/5">
@@ -34,7 +35,7 @@ const data = await getCoins();
           <div class="grid gap-2 px-6 pt-6 pb-2">
             <p class="text-2xl">$ ${Number(coin.price).toFixed(2)}</p>
             <p class="${String(coin.change).startsWith('-')
-             ? 'text-red-500' 
+             ? 'text-red-500'
              : 'text-green-400'
             }">${coin.change} %</p>
           </div>
@@ -48,7 +49,11 @@ const data = await getCoins();
         const uuid = event.currentTarget.getAttribute("data-uuid");
         console.log(uuid);
         const response = await getCoin(uuid);
-        console.log(response);
+        const history = await getCoinHistory(uuid);
+        // console.log(response);
+        // console.log(history);
+        const result = {...response.data.coin, ...history.data}; // ... <- data for all coins
+        console.log(result);
       });
     });
   
