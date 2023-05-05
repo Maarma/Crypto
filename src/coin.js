@@ -1,15 +1,7 @@
-const API_KEY = "0351f0f65fmsh2cbaf2af67b65fdp13011ajsnf444b1f4fe65";
-const BASE_URL = "coinranking1.p.rapidapi.com";
+import { getCoins} from "../api/coinService.js";
 
-fetch(`https://${BASE_URL}/coins`, {
-  headers: {
-    'X-RapidAPI-Key': API_KEY,
-    "X-RapidAPI-Host": BASE_URL
-  }
-})
-  .then((response) => response.json())
-  //  .then((data) => console.log(data));
-  .then((data) => {
+const data = await getCoins();
+
     const marketTrendsWrapper = document.querySelector("#market_trends");
     console.log(marketTrendsWrapper);
     console.log(data.data.coins);
@@ -19,9 +11,13 @@ fetch(`https://${BASE_URL}/coins`, {
         const articleClasses = [
             "border-2",
             "p-4",
-            "border-[#73FDAA]",
             "rounded-2xl"
-        ]
+        ];
+      
+      const borderColorsWeDontWant = ['#000000']
+      
+      article.style.borderColor = borderColorsWeDontWant.includes(coin.color) ? '#73FDAA' : coin.color;
+
       article.classList.add(...articleClasses);
       article.innerHTML = `
           <div class="flex mb-2">
@@ -39,4 +35,4 @@ fetch(`https://${BASE_URL}/coins`, {
         `;
       marketTrendsWrapper.append(article);
     });
-  });
+  
