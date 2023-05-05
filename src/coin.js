@@ -21,7 +21,7 @@ const data = await getCoins();
       article.classList.add(...articleClasses);
       article.innerHTML = `
           <div class="flex mb-2">
-            <div class="flex place-items-center justify-around w-2/3">
+            <div class="flex place-items-center justify-around w-4/5">
               <img class="w-12 h-12 object-cover" src="${coin.iconUrl}" alt="${coin.name}">
               <p class="mx-2">${coin.symbol}</p>
               <p class="text-[1.5vh] opacity-70">${coin.name}</p>
