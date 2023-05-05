@@ -1,20 +1,23 @@
-import { getCoins} from "../api/coinService.js";
+import { getCoins, getCoin } from "../api/coinService.js";
 
 const data = await getCoins();
 
     const marketTrendsWrapper = document.querySelector("#market_trends");
-    console.log(marketTrendsWrapper);
-    console.log(data.data.coins);
+    //console.log(marketTrendsWrapper);
+    //console.log(data.data.coins);
 
     data.data.coins.forEach((coin) => {
       const article = document.createElement("article");
+
+      article.setAttribute("data-uuid", coin.uuid);
+
         const articleClasses = [
             "border-2",
             "p-4",
             "rounded-2xl"
         ];
       
-      const borderColorsWeDontWant = ['#000000']
+      const borderColorsWeDontWant = ['#000000', '#00042b', '#303030'];
       
       article.style.borderColor = borderColorsWeDontWant.includes(coin.color) ? '#73FDAA' : coin.color;
 
@@ -34,5 +37,15 @@ const data = await getCoins();
           </div>
         `;
       marketTrendsWrapper.append(article);
+    });
+
+    const cards = document.querySelectorAll("#market_trends article");
+    cards.forEach((node)=> {
+      node.addEventListener('click', async (event) => {
+        const uuid = event.currentTarget.getAttribute("data-uuid");
+        console.log(uuid);
+        const response = await getCoin(uuid);
+        console.log(response);
+      });
     });
   

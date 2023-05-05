@@ -9,8 +9,23 @@ export const getCoins = async () => {
     try {
         const response = await fetch(`${BASE_URL}/coins`, { headers: options });
         return response.json();
+
     } catch (error) {
         console.log(error);
     }
     
 };
+
+export const getCoin = async (uuid) => {
+    try {
+        const response = await fetch(`${BASE_URL}/coin/${uuid}`, { headers: options,
+        });
+
+        return response.json();
+
+    } catch (error) {
+        console.log(error);
+    }
+    
+};
+
