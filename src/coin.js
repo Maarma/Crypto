@@ -33,7 +33,10 @@ const data = await getCoins();
           </div>
           <div class="grid gap-2 px-6 pt-6 pb-2">
             <p class="text-2xl">$ ${Number(coin.price).toFixed(2)}</p>
-            <p>${coin.change} %</p>
+            <p class="${String(coin.change).startsWith('-')
+             ? 'text-red-500' 
+             : 'text-green-400'
+            }">${coin.change} %</p>
           </div>
         `;
       marketTrendsWrapper.append(article);

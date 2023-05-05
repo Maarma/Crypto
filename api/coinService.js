@@ -12,8 +12,7 @@ export const getCoins = async () => {
 
     } catch (error) {
         console.log(error);
-    }
-    
+    }  
 };
 
 export const getCoin = async (uuid) => {
@@ -25,7 +24,6 @@ export const getCoin = async (uuid) => {
 
     } catch (error) {
         console.log(error);
-    }
-    
+    }  
 };
 
